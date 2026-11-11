@@ -1,0 +1,27 @@
+# Real MmCows visual_data from 25 July (folder 0725). Projection matrices are
+# in centimeters at 4480x2800; the loader converts them to meters.
+date: "0725"
+cow_id: 1
+label_set: combined
+calibration_width: 4480
+calibration_height: 2800
+min_views: 2
+max_frames: 6
+max_motion_m: 0.45
+# Behaviors kept for a nearly still head: standing, feeding, licking, drinking.
+# Walking and lying are skipped. See cattle3d.mmcows.BEHAVIOR_NAMES.
+allowed_behaviors: [2, 3, 4, 5, 6]
+head_size_m: [0.9, 0.9, 0.7]
+head_z_m: 1.45
+train_long_side: 160
+init_points: 700
+background: [0.0, 0.0, 0.0]
+turntable_frames: 24
+turntable_size: 192
+train:
+  iterations: 250
+  lambda_ssim: 0.2
+  # Keep every Gaussian that overlaps a tile. Lower this only if a view runs out of memory.
+  max_per_tile: 1024
+  tile: 16
+  log_every: 25

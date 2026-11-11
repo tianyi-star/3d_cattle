@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cattle3d"
+version = "0.1.0"
+description = "Rebuild a dairy cow head from MmCows multi-view frames with 3D Gaussian Splatting"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+dependencies = [
+  "numpy>=1.26",
+  "torch>=2.2",
+  "opencv-python-headless>=4.9",
+  "pyyaml>=6",
+  "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+cattle3d = "cattle3d.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
