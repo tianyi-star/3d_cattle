@@ -1,0 +1,5 @@
+# Copy to configs/path.yaml and point these at a local MmCows download.
+# visual_data.zip and, optionally, behavior labels from sensor_data.zip.
+# Data license is CC BY-NC-SA 4.0 and is not shipped with this repository.
+visual_data_dir: data/mmcows/visual_data
+sensor_data_dir: data/mmcows/sensor_data
